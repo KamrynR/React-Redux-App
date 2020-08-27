@@ -21,8 +21,10 @@ export const reducer = (state = initialState, action) => {
             };
         case FETCH_X_SUCCESS:
             // console.log(action.payload[0]);
-            let randResQ = action.payload[Math.floor(Math.random() * Math.floor(499))].en;
-            let randResA = action.payload[Math.floor(Math.random() * Math.floor(499))].author;
+            let randNum = (Math.floor(Math.random() * Math.floor(499)));
+            let randResQ = action.payload[randNum].en;
+            let randResA = action.payload[randNum].author;
+            // console.log(action.payload[randNum]);
             let res = (`"${randResQ}" - ${randResA}`);
             console.log(res);
             return {
